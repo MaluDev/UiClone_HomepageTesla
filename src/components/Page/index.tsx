@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 import DefaultOverlayContent from '../DefaultOverlayContent';
+import ModelSection from '../Model/ModelSection';
+import ModelsWrapper from '../Model/ModelsWrapper';
 
 import { Container } from './styles';
 
@@ -12,9 +14,26 @@ function Page({ children }: PageProps) {
     <Container>
       <ModelsWrapper>
         <div>
-          <ModelSection modelName="Model One" overlayNode={ <DefaultOverlayContent label="Model One" descripition='Order Online fro Delivery'/>
+          {[
+            'Model One',
+            'Model Two',
+            'Model Three',
+            'Model Four',
+            'Model Five',
+            'Model Six',
+            'Model Seven',
+          ].map(modelName => (
+            <ModelSection 
+            key={modelName}
+            className="colored" 
+            modelName={modelName} 
+            overlayNode={ 
+              <DefaultOverlayContent 
+              label={modelName} 
+              descripition='Order Online for Delivery'/>
           }
           />
+          ))}
         </div>
       </ModelsWrapper>
     </Container>

@@ -2,14 +2,9 @@ import { ReactNode } from 'react';
 
 import { Container } from './styles';
 
-interface ModelsWrapperProps {
-  children: ReactNode;
-}
-
-function ModelsWrapper({ children }: ModelsWrapperProps) {
+const ModelsWrapper: React.FC = ({ children }) => {
   return (
     <Container>
-      <h1>ModelsWrapper</h1>
       {children}
     </Container>
   );
